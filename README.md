@@ -176,3 +176,4 @@ python -m pip install -r data/plugins/astrbot_plugin_minesweeper/requirements.tx
 2. 查看 [AstrBot 文档](https://docs.astrbot.app/)、[更新日志](changelog.md) 和 [来源及许可](NOTICE.md)。`LOGO.png` 为项目图标；发布 ZIP 同时包含 AstrBot 自动识别的 `logo.png` 同图副本。Linux 从源码安装时可执行 `cp LOGO.png logo.png` 让管理面板识别图标。
 3. 游戏逻辑位于 `src/astrbot_plugin_minesweeper/`，根目录 `main.py` 为 AstrBot 入口，`tools.py` 定义自然语言 LLM 工具。默认开发测试不依赖启动机器人；集成测试使用真实 AstrBot SDK 的命令过滤器、工具执行器、消息结果和插件生命周期。
 4. 发布前运行 `uv run --locked pytest`、Ruff 检查及 `uv build`。执行 `python scripts/package_plugin.py` 可生成完整插件 ZIP。PyPI 工作流需配置 `PYPI_API_TOKEN`；构建的 Python 包提供游戏内核，AstrBot 安装应使用完整源码目录或仓库。
+5. 将 `pyproject.toml` 的 `[project].version` 更新并合并到 `main` 后，会自动创建 `v版本号` 标签和 GitHub Release，并生成发布说明；仅修改其他配置不会发布。已有发布会跳过，同版本草稿会发布，冲突标签会报错。预发布版本会标记为 prerelease，使用内置 `GITHUB_TOKEN`，无需新增密钥。发布前请同步更新 `metadata.yaml` 与 `__version__`，并按需更新 `uv.lock`。
