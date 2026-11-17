@@ -1,0 +1,50 @@
+{
+  "default_skin": {
+    "type": "string",
+    "description": "默认扫雷皮肤",
+    "default": "winxp",
+    "options": [
+      "clone",
+      "colorsonly",
+      "hibbeler",
+      "icicle",
+      "mario",
+      "maviz",
+      "mine",
+      "narkomania",
+      "ocean",
+      "pacman",
+      "predator",
+      "scratch",
+      "symbol",
+      "unknown",
+      "vista",
+      "win98",
+      "winbw",
+      "winxp"
+    ]
+  },
+  "game_timeout": {
+    "type": "int",
+    "description": "游戏空闲超时（秒）",
+    "default": 300,
+    "hint": "最少 10 秒，每 5 秒检查；保存后重载生效。"
+  },
+  "max_games": {
+    "type": "int",
+    "description": "同时进行的游戏上限",
+    "default": 100,
+    "hint": "最少 1 局；保存后重载生效。"
+  },
+  "text_mode": {
+    "type": "bool",
+    "description": "使用文本棋盘",
+    "default": false,
+    "hint": "平台无法发送图片时开启。"
+  },
+  "stop_owner_only": {
+    "type": "bool",
+    "description": "仅发起者或 AstrBot 管理员可以结束游戏",
+    "default": false
+  }
+}
