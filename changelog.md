@@ -2,6 +2,8 @@
 
 ## 未发布
 
+- 新增 main 分支 pyproject.toml 版本变动自动创建 GitHub Release 的工作流，并同步到 uv-project-template。
+
 - 将 Ruff 本地 system 钩子替换为官方 pre-commit Python 钩子，修复 `Executable uv not found`。
 - 将钩子 Ruff 固定为与当前 uv.lock 一致的 0.17.5，并在 CI 执行全部 pre-commit 钩子。
 - 补充 pre-commit 安装及全量检查说明。
