@@ -1,4 +1,4 @@
-name: Ruff Lint
+name: Pre-commit checks
 
 on: [push, pull_request]
 
@@ -16,5 +16,4 @@ jobs:
           python-version: "3.12"
           enable-cache: true
       - run: uv sync --locked
-      - run: uv run --locked ruff check .
-      - run: uv run --locked ruff format --check .
+      - run: uv run --locked pre-commit run --all-files --show-diff-on-failure

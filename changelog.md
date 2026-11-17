@@ -1,5 +1,11 @@
 # 更新日志
 
+## 未发布
+
+- 将 Ruff 本地 system 钩子替换为官方 pre-commit Python 钩子，修复 `Executable uv not found`。
+- 将钩子 Ruff 固定为与当前 uv.lock 一致的 0.17.5，并在 CI 执行全部 pre-commit 钩子。
+- 补充 pre-commit 安装及全量检查说明。
+
 ## v1.1.0 — 2026-11-17
 
 - 新增 `minesweeper_start`、`minesweeper_stop` LLM 工具，支持自然语言开局和结束扫雷。
