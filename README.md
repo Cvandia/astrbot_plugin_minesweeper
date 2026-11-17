@@ -70,9 +70,11 @@ python -m pip install -r data/plugins/astrbot_plugin_minesweeper/requirements.tx
 `uv` 本地开发
 ```bash
 uv sync --locked --group integration
-uv run --locked pytest
+uv run --locked --group integration pytest
 uv run --locked ruff check .
 uv run --locked ruff format --check .
+uv run --locked pre-commit install
+uv run --locked pre-commit run --all-files
 ```
 
 `git clone` 安装
@@ -95,6 +97,8 @@ python -m pip install -r data/plugins/astrbot_plugin_minesweeper/requirements.tx
  阿里源```https://mirrors.aliyun.com/pypi/simple/```
 
  请使用 AstrBot 自身的 Python 环境安装依赖；`uv sync` 用于开发，不会自动安装插件到 AstrBot。AstrBot SDK 集成测试可在满足 SDK Python 版本要求的环境中执行 `uv sync --locked --group integration`；未安装 SDK 时该测试组会明确跳过。
+
+ pre-commit 的 Ruff 钩子使用官方隔离环境，首次运行会自动下载 Ruff，不依赖系统中的 `uv`。也可使用 `python -m pip install pre-commit` 安装后执行 `pre-commit install` 和 `pre-commit run --all-files`；需能访问钩子仓库及 Python 包源。
 
 </details>
 
