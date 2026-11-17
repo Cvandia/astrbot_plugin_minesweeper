@@ -1,0 +1,26 @@
+[project]
+name = "astrbot-plugin-minesweeper"
+version = "1.1.0"
+description = "AstrBot 多人扫雷游戏插件"
+authors = [{ name = "Cvandia", email = "106718176+Cvandia@users.noreply.github.com" }]
+dependencies = ["Pillow>=10.4,<14"]
+requires-python = ">=3.12,<4.0"
+readme = "README.md"
+license = { text = "MIT" }
+
+[dependency-groups]
+dev = ["pre-commit>=4.0.1", "ruff>=0.8.1", "pytest>=8.3.4", "pytest-asyncio>=0.24", "PyYAML>=6.0"]
+integration = ["astrbot==4.16.0"]
+
+[build-system]
+requires = ["uv_build>=0.8.18,<0.9.0"]
+build-backend = "uv_build"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+testpaths = ["tests"]
+
+[tool.uv.build-backend]
+source-include = ["__init__.py", "main.py", "tools.py", "metadata.yaml", "_conf_schema.json", "requirements.txt", "LOGO.png", "changelog.md", "NOTICE.md", "scripts/**", "tests/**", ".github/**", ".pre-commit-config.yaml", ".ruff.toml"]

@@ -1,0 +1,23 @@
+name: astrbot_plugin_minesweeper
+display_name: 扫雷游戏
+desc: 多人协作扫雷小游戏，支持自然语言开局和结束、三档难度、自定义棋盘、批量操作及 18 套皮肤。
+version: v1.1.0
+author: Cvandia
+repo: https://github.com/Cvandia/astrbot_plugin_minesweeper
+astrbot_version: ">=4.16,<5"
+support_platforms:
+  - aiocqhttp
+  - qq_official
+  - qq_official_webhook
+  - telegram
+  - wecom
+  - wecom_ai_bot
+  - weixin_oc
+  - lark
+  - dingtalk
+  - kook
+social_link: https://github.com/Cvandia
+tags:
+  - 游戏
+  - 扫雷
+  - 多人
